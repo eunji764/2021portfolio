@@ -1,0 +1,27 @@
+{
+  "name": "2021portfolio",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "parcel index.html",
+    "build": "parcel build index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eunji764/2021portfolio.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/eunji764/2021portfolio/issues"
+  },
+  "homepage": "https://github.com/eunji764/2021portfolio#readme",
+  "devDependencies": {
+    "parcel-bundler": "^1.12.5"
+  },
+  "dependencies": {
+    "swiper": "^6.8.2"
+  }
+}
