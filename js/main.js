@@ -14,12 +14,13 @@ window.onload = function(){
 
 const about = document.querySelector('.about')
 getPosY(about) //821
+
 function getPosY(el){
   let posY = el.offsetTop
   if (el.offsetParent){
     posY += el.offsetParent.offsetTop
   }
-  return console.log(posY) 
+  return posY
 }
 
 
@@ -36,9 +37,9 @@ function scrollDown(){
 }
 
 window.addEventListener('scroll',  _.throttle(function(){
-  if( beforeOffset < 800 && scrollDown()){
+  if( beforeOffset < getPosY(about) && scrollDown()){
     gsap.to(window, .3 , {
-      scrollTo : 821
+      scrollTo : getPosY(about)
     })
   } else {
     beforeOffset = window.scrollY

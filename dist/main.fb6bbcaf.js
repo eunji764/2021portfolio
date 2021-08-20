@@ -15561,7 +15561,7 @@ function getPosY(el) {
     posY += el.offsetParent.offsetTop;
   }
 
-  return console.log(posY);
+  return posY;
 }
 
 var beforeOffset = window.scrollY;
@@ -15579,9 +15579,9 @@ function scrollDown() {
 }
 
 window.addEventListener('scroll', _.throttle(function () {
-  if (beforeOffset < 800 && scrollDown()) {
+  if (beforeOffset < getPosY(about) && scrollDown()) {
     gsap.to(window, .3, {
-      scrollTo: 821
+      scrollTo: getPosY(about)
     });
   } else {
     beforeOffset = window.scrollY;
@@ -15814,7 +15814,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "59216" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "61196" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
