@@ -15669,7 +15669,7 @@ var nav = document.querySelector('nav'),
     navBtn = nav.querySelector('.nav_btn'),
     navContents = nav.querySelector('.nav_contents');
 window.addEventListener('scroll', _.throttle(function () {
-  if (window.scrollY >= 821) {
+  if (window.scrollY >= getPosY(about)) {
     gsap.to(navBtn, 0, {
       opacity: 1,
       display: 'flex'
@@ -15814,7 +15814,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "61196" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "63762" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

@@ -108,7 +108,7 @@ const nav = document.querySelector('nav'),
       navContents = nav.querySelector('.nav_contents')
 
 window.addEventListener('scroll', _.throttle(function(){
-  if(window.scrollY >= 821){
+  if(window.scrollY >= getPosY(about)){
     gsap.to(navBtn, 0, {
       opacity : 1,
       display : 'flex'
