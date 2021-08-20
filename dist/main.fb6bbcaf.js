@@ -15552,7 +15552,7 @@ window.onload = function () {
 };
 
 var about = document.querySelector('.about');
-getPosY(about); //821
+getPosY(about); // 요소 위치 반환함수
 
 function getPosY(el) {
   var posY = el.offsetTop;
@@ -15562,7 +15562,8 @@ function getPosY(el) {
   }
 
   return posY;
-}
+} // 스크롤다운 여부
+
 
 var beforeOffset = window.scrollY;
 
@@ -15613,10 +15614,10 @@ function star() {
 
 var title = document.querySelector('.title_box h1'),
     introTitle = '하늘 아래 같은 코드는 없지만 좋은 코드는 있다....';
-var typingIndex = 0;
 
 function typing(el, p) {
-  return new Promise(function (resolve, reject) {
+  return new Promise(function (resolve) {
+    var typingIndex = 0;
     setTimeout(function () {
       var typingTxt = p.split("");
       var typingGo = setInterval(function () {
@@ -15814,7 +15815,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "63762" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49339" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

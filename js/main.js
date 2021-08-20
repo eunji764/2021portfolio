@@ -13,8 +13,9 @@ window.onload = function(){
 }
 
 const about = document.querySelector('.about')
-getPosY(about) //821
+getPosY(about)
 
+// 요소 위치 반환함수
 function getPosY(el){
   let posY = el.offsetTop
   if (el.offsetParent){
@@ -23,7 +24,7 @@ function getPosY(el){
   return posY
 }
 
-
+// 스크롤다운 여부
 let beforeOffset = window.scrollY
 function scrollDown(){
   let afterOffset = window.scrollY
@@ -74,9 +75,10 @@ function star(){
 const title= document.querySelector('.title_box h1'),
       introTitle = '하늘 아래 같은 코드는 없지만 좋은 코드는 있다....'
 
-let typingIndex = 0
+
 function typing(el, p){
-  return new Promise(function(resolve,reject){
+  return new Promise(function(resolve){
+    let typingIndex = 0
     setTimeout(function(){
       let typingTxt = p.split("")
       let typingGo = setInterval(()=>{
@@ -97,7 +99,6 @@ async function init(){
   const respose = await typing(title, introTitle)
   if(respose){star()}
 }
-
 
 
 
