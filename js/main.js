@@ -165,8 +165,6 @@ function prograss(type, percent){
         circles = circleBoxs.map(circleBox => circleBox.querySelector('.prograss_circle')),
         spans = circleBoxs.map(circleBox => circleBox.querySelector('strong')),
         circumference = circles[0].getTotalLength() // 722
-  
-  // console.log(circumference)
 
   const types = {
      html : 0,
