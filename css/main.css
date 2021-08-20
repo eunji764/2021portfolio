@@ -1043,8 +1043,6 @@ footer .copyright {
 
 
 @media screen and (max-width:620px) {
-	.cloud:nth-child(3) {bottom: 30px; right: 80px; width: 180px;}
-
 	.intro .inner .title_box {
 		width: 320px;
 		height: 70px;
@@ -1053,6 +1051,17 @@ footer .copyright {
 	.intro .inner .title_box h1 {
 		font-size: 1.4rem;
 	}
+
+  .clouds .cloud {
+    width: 160px;
+  }
+
+  .cloud:nth-child(1) {top: 10%; left: -10%;}
+  .cloud:nth-child(2) {top: 2%; right: 5%;}
+  .cloud:nth-child(3) {bottom: 18%; right: 13%; width: 110px;}
+  .cloud:nth-child(4) {bottom: 3%; left: -2%;}
+  .cloud:nth-child(5) {bottom: 3%; right: -120%;}
+  .cloud:nth-child(6) {top: 15%; left: 30%; width:10px;}
 
 	/* ABOUT */
 	.text_box .simple {
