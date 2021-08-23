@@ -452,9 +452,7 @@ nav .nav_contents.open {
 }
 
 .circle_prograss_box .circles .prograss_circle {
-  stroke-dasharray: 722;
-	stroke-dashoffset: 722;
-  transition: 1.5s;
+  transition:2s;
 	filter: drop-shadow(-3px 3px 10px rgba(0,0,0,.3));
 }
 
@@ -1044,7 +1042,7 @@ footer .copyright {
 
 @media screen and (max-width:620px) {
 	.intro .inner .title_box {
-		width: 320px;
+		width: 315px;
 		height: 70px;
 	}
 

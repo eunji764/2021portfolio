@@ -12,10 +12,14 @@ window.onload = function(){
   init()
 }
 
-const about = document.querySelector('.about')
+const about = document.querySelector('.about'),
+      skills = document.querySelector('.skills')
+
 getPosY(about)
+getPosY(skills)
 
 // 요소 위치 반환함수
+let beforeOffset = window.scrollY
 function getPosY(el){
   let posY = el.offsetTop
   if (el.offsetParent){
@@ -25,7 +29,6 @@ function getPosY(el){
 }
 
 // 스크롤다운 여부
-let beforeOffset = window.scrollY
 function scrollDown(){
   let afterOffset = window.scrollY
   if (afterOffset-beforeOffset>0){
@@ -155,29 +158,38 @@ new ScrollMagic.Scene({
 
 // PROGRASS
 
-prograss('html', 85)
-prograss('css', 90)
-prograss('javascript', 70)
-
-
-function prograss(type, percent){
-  const circleBoxs = Array.from(document.querySelectorAll('.circle_prograss_box')),
+const circleBoxs = Array.from(skills.querySelectorAll('.circle_prograss_box')),
         circles = circleBoxs.map(circleBox => circleBox.querySelector('.prograss_circle')),
         spans = circleBoxs.map(circleBox => circleBox.querySelector('strong')),
-        circumference = circles[0].getTotalLength() // 722
+        circumference = circles[0].getTotalLength()
 
-  const types = {
-     html : 0,
-     css : 1,
-     javascript : 2
-   }
-   
-  const circle = circles[types[type]],
-        strong = spans[types[type]]
-   
+const types = {
+  html : 0,
+  css : 1,
+  javascript : 2
+}
+const {html, css, javascript} = types
+
+circles.forEach(circle =>{
+  circle.style.strokeDasharray = circumference
+  circle.style.strokeDashoffset = circumference
+})
+
+function prograss(type, percent){
+  const circle = circles[type],
+        strong = spans[type]
   circle.style.strokeDashoffset = circumference*(1-percent/100)
   strong.innerHTML = percent
 }
+
+window.addEventListener('scroll',_.throttle(() => {
+  if (scrollY > getPosY(skills)-window.innerHeight*0.6){
+    prograss(html, 85)
+    prograss(css, 90)
+    prograss(javascript, 70)
+  }
+},300))
+
 
 
 // FLOATING
